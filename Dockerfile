@@ -38,10 +38,11 @@ RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple --no-cache-dir -r r
 
 COPY . /usr/src/app
 
-RUN cd /usr/src/app  && cd UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/ && \
-    cd build && \
-    cmake .. && make -j4 && sudo make install 
+RUN cd /usr/src/app/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/ && \
+    rm -rf build/* && cd build && \
+    cmake .. && make -j4 && make install 
     
-RUN mkdir /usr/src/app/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/build && \
+RUN rm -rf /usr/src/app/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/build/* && \
     cd /usr/src/app/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/build && \
-    cmake -D VLFEAT_LIBRARY=/usr/src/app/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/vlfeat-0.9.20/bin/glnxa64/libvl.so ..
+    cmake -D VLFEAT_LIBRARY=/usr/src/app/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/vlfeat-0.9.20/bin/glnxa64/libvl.so .. && \
+    make -j4 && make install
