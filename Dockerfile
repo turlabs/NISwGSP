@@ -32,8 +32,8 @@ RUN cd ${APP_DIR}/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/buil
     make install
 
 # 编译vlfeat
-RUN cd ${APP_DIR}/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/vlfeat-0.9.20/build && \
-    cmake .. && make -j4
+RUN cd ${APP_DIR}/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/vlfeat-0.9.20/ && \
+    make -j4
 
 # 编译UglyMan_NISwGSP_Stitching
 RUN cd ${APP_DIR}/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/build/ && \
