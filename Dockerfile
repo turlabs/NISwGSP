@@ -1,48 +1,52 @@
-FROM ubuntu:16.04
+FROM ubuntu:trusty  as Init
 
-RUN mkdir -p /usr/src/app 
-WORKDIR /usr/src/app 
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+ENV APP_DIR /usr/src/app
 
 COPY sources.zh.list /etc/apt/sources.list
+COPY . .
 
-# Various Python and C/build deps
-RUN apt-get update --fix-missing  && \
-#apt-get upgrade -y --fix-missing && \ 
-    apt-get install build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev wget -y --fix-missing  && \
-    apt-get install libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libjpeg-dev libeigen3-dev python3 python3-pip python-qt4 tzdata -y --fix-missing
+# 系统初始化
+RUN apt-get update && \
+    apt-get install -y build-essential && \
+    apt-get install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev && \
+    apt-get install -y python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
 
-#RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip && \
-RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python Pillow flask flask_cors && \
-    rm -f /etc/localtime && \
-    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-# Install Open CV - Warning, this takes absolutely forever
-RUN cd ~ && wget https://github.com/opencv/opencv/archive/3.4.0.tar.gz -O opencv.tar.gz  && tar -xzvf opencv.tar.gz  && \ 
-    cd opencv-3.4.0 && \
-    # cd ~ && wget https://github.com/opencv/opencv_contrib/archive/3.4.0.tar.gz -O opencv_contrib.tar.gz  && \
-    # tar -xzvf opencv_contrib.tar.gz && \
-    # cd ~/opencv_contrib-3.4.0 && 
-    mkdir -p build && cd build && \
-    cmake -D CMAKE_BUILD_TYPE=RELEASE \
-    -D CMAKE_INSTALL_PREFIX=/usr/local \ 
-    -D INSTALL_C_EXAMPLES=ON \ 
-    -D INSTALL_PYTHON_EXAMPLES=ON \ 
-    #-D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \ 
-    -D BUILD_EXAMPLES=OFF .. && \
+# 2. 编译opencv
+FROM Init  as OPENCV
+
+RUN cd ${APP_DIR}/opencv/opencv-3.4.0/build/ && \
+    cmake . ${APP_DIR}/opencv/opencv-3.4.0 && \
     make -j4 && \
-    make install && \ 
-    ldconfig
+    make install
 
-COPY requirements.txt /usr/src/app/
-RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple --no-cache-dir -r requirements.txt
+# 3.0 编译 NISwGSP
+FROM OPENCV as NISwGSP
 
-COPY . /usr/src/app
+# 编译eigen
+RUN cd ${APP_DIR}/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/ && \
+    cmake .. && \
+    make -j4 && \
+    make install
 
-RUN cd /usr/src/app/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/ && \
-    rm -rf build/* && cd build && \
-    cmake .. && make -j4 && make install 
-    
-RUN rm -rf /usr/src/app/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/build/* && \
-    cd /usr/src/app/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/build && \
-    cmake -D VLFEAT_LIBRARY=/usr/src/app/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/vlfeat-0.9.20/bin/glnxa64/libvl.so .. && \
-    make -j4 && make install
+# 编译vlfeat
+RUN cd ${APP_DIR}/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/vlfeat-0.9.20/build && \
+    cmake .. && make -j4
+
+# 编译UglyMan_NISwGSP_Stitching
+RUN cd ${APP_DIR}/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/build/ && \
+    cmake -D VLFEAT_LIBRARY=${APP_DIR}/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/vlfeat-0.9.20/bin/glnxa64/libvl.so .. && \
+    make -j4
+
+RUN cd ${APP_DIR}/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/build/ && ls -al
+
+# 4.0 获取编译结果 NISwGSP
+FROM alpine
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+COPY --from=NISwGSP  ${APP_DIR}/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/build/NISwGSP /usr/bin/.
+RUN ls -al
+COPY entrypoint.sh tini /usr/bin/ 
+RUN chmod +x /usr/bin/tini /usr/bin/NISwGSP /usr/bin/entrypoint.sh
