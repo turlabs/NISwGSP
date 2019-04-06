@@ -1,4 +1,4 @@
-FROM ubuntu:trusty  as Init
+FROM ubuntu:trusty  AS Init
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
@@ -15,7 +15,7 @@ RUN apt-get update && \
 
 
 # 2. 编译opencv
-FROM Init  as OPENCV
+FROM Init  AS OPENCV
 
 RUN cd ${APP_DIR}/opencv/opencv-3.4.0/build/ && \
     cmake . ${APP_DIR}/opencv/opencv-3.4.0 && \
@@ -23,7 +23,7 @@ RUN cd ${APP_DIR}/opencv/opencv-3.4.0/build/ && \
     make install
 
 # 3.0 编译 NISwGSP
-FROM OPENCV as NISwGSP
+FROM OPENCV AS NISwGSP
 
 # 编译eigen
 RUN cd ${APP_DIR}/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/ && \
@@ -43,7 +43,7 @@ RUN cd ${APP_DIR}/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/build/ && 
 RUN cd ${APP_DIR}/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/build/ && ls -al
 
 # 4.0 获取编译结果 NISwGSP
-FROM alpine
+FROM alpine AS NISwGSP-RESULT
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY --from=NISwGSP  ${APP_DIR}/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/build/NISwGSP /usr/bin/.
