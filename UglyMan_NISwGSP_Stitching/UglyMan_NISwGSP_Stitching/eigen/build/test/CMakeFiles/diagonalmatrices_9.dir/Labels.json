@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/test/diagonalmatrices.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"BuildOfficial"
+		],
+		"name" : "diagonalmatrices_9"
+	}
+}

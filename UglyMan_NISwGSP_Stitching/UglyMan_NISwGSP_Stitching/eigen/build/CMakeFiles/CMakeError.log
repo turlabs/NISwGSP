@@ -1,0 +1,174 @@
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wshorten64to32 failed with the following output:
+Change Dir: /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_45510/fast"
+/usr/bin/make -f CMakeFiles/cmTC_45510.dir/build.make CMakeFiles/cmTC_45510.dir/build
+make[1]: Entering directory '/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_45510.dir/src.cxx.o
+/usr/bin/c++    -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -DCOMPILER_SUPPORT_Wshorten64to32 -Werror   -Wshorten-64-to-32 -o CMakeFiles/cmTC_45510.dir/src.cxx.o -c /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Wshorten-64-to-32'
+CMakeFiles/cmTC_45510.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_45510.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_45510.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_45510/fast' failed
+make: *** [cmTC_45510/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wenumconversion failed with the following output:
+Change Dir: /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7f087/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7f087.dir/build.make CMakeFiles/cmTC_7f087.dir/build
+make[1]: Entering directory '/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7f087.dir/src.cxx.o
+/usr/bin/c++    -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -DCOMPILER_SUPPORT_Wenumconversion -Werror   -Wenum-conversion -o CMakeFiles/cmTC_7f087.dir/src.cxx.o -c /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Wenum-conversion'; did you mean '-Wno-conversion'?
+CMakeFiles/cmTC_7f087.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_7f087.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_7f087.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7f087/fast' failed
+make: *** [cmTC_7f087/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wcpp11extensions failed with the following output:
+Change Dir: /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c6b4f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c6b4f.dir/build.make CMakeFiles/cmTC_c6b4f.dir/build
+make[1]: Entering directory '/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c6b4f.dir/src.cxx.o
+/usr/bin/c++    -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -DCOMPILER_SUPPORT_Wcpp11extensions -Werror   -Wc++11-extensions -o CMakeFiles/cmTC_c6b4f.dir/src.cxx.o -c /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Wc++11-extensions'; did you mean '-fms-extensions'?
+CMakeFiles/cmTC_c6b4f.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_c6b4f.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_c6b4f.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c6b4f/fast' failed
+make: *** [cmTC_c6b4f/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd981 failed with the following output:
+Change Dir: /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_801aa/fast"
+/usr/bin/make -f CMakeFiles/cmTC_801aa.dir/build.make CMakeFiles/cmTC_801aa.dir/build
+make[1]: Entering directory '/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_801aa.dir/src.cxx.o
+/usr/bin/c++    -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wdouble-promotion -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -DCOMPILER_SUPPORT_wd981 -Werror   -wd981 -o CMakeFiles/cmTC_801aa.dir/src.cxx.o -c /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-wd981'
+CMakeFiles/cmTC_801aa.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_801aa.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_801aa.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_801aa/fast' failed
+make: *** [cmTC_801aa/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd2304 failed with the following output:
+Change Dir: /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8103d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8103d.dir/build.make CMakeFiles/cmTC_8103d.dir/build
+make[1]: Entering directory '/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8103d.dir/src.cxx.o
+/usr/bin/c++    -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wdouble-promotion -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -DCOMPILER_SUPPORT_wd2304 -Werror   -wd2304 -o CMakeFiles/cmTC_8103d.dir/src.cxx.o -c /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-wd2304'
+CMakeFiles/cmTC_8103d.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_8103d.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_8103d.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_8103d/fast' failed
+make: *** [cmTC_8103d/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_STRICTANSI failed with the following output:
+Change Dir: /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_00b80/fast"
+/usr/bin/make -f CMakeFiles/cmTC_00b80.dir/build.make CMakeFiles/cmTC_00b80.dir/build
+make[1]: Entering directory '/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_00b80.dir/src.cxx.o
+/usr/bin/c++    -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wdouble-promotion -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -DCOMPILER_SUPPORT_STRICTANSI -Werror   -strict-ansi -o CMakeFiles/cmTC_00b80.dir/src.cxx.o -c /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-strict-ansi'; did you mean '-fstrict-enums'?
+CMakeFiles/cmTC_00b80.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_00b80.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_00b80.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_00b80/fast' failed
+make: *** [cmTC_00b80/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Qunusedarguments failed with the following output:
+Change Dir: /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9472e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9472e.dir/build.make CMakeFiles/cmTC_9472e.dir/build
+make[1]: Entering directory '/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9472e.dir/src.cxx.o
+/usr/bin/c++    -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wdouble-promotion -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -DCOMPILER_SUPPORT_Qunusedarguments -Werror   -Qunused-arguments -o CMakeFiles/cmTC_9472e.dir/src.cxx.o -c /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Qunused-arguments'; did you mean '-Wunused-parameter'?
+CMakeFiles/cmTC_9472e.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_9472e.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_9472e.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_9472e/fast' failed
+make: *** [cmTC_9472e/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_70106/fast"
+/usr/bin/make -f CMakeFiles/cmTC_70106.dir/build.make CMakeFiles/cmTC_70106.dir/build
+make[1]: 进入目录“/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_70106.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_70106.dir/CheckSymbolExists.c.o   -c /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_70106
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70106.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_70106.dir/CheckSymbolExists.c.o  -o cmTC_70106 
+CMakeFiles/cmTC_70106.dir/CheckSymbolExists.c.o：在函数‘main’中：
+CheckSymbolExists.c:(.text+0x1b)：对‘pthread_create’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_70106.dir/build.make:97: recipe for target 'cmTC_70106' failed
+make[1]: *** [cmTC_70106] Error 1
+make[1]: 离开目录“/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp”
+Makefile:126: recipe for target 'cmTC_70106/fast' failed
+make: *** [cmTC_70106/fast] Error 2
+
+File /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_50d42/fast"
+/usr/bin/make -f CMakeFiles/cmTC_50d42.dir/build.make CMakeFiles/cmTC_50d42.dir/build
+make[1]: 进入目录“/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_50d42.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_50d42.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_50d42
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50d42.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_50d42.dir/CheckFunctionExists.c.o  -o cmTC_50d42 -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_50d42.dir/build.make:97: recipe for target 'cmTC_50d42' failed
+make[1]: *** [cmTC_50d42] Error 1
+make[1]: 离开目录“/home/carvendy/dev/git/NISwGSP/UglyMan_NISwGSP_Stitching/UglyMan_NISwGSP_Stitching/eigen/build/CMakeFiles/CMakeTmp”
+Makefile:126: recipe for target 'cmTC_50d42/fast' failed
+make: *** [cmTC_50d42/fast] Error 2
+
+
