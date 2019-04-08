@@ -27,8 +27,7 @@ for h in range(0, height):
 
 up_h  = max(up_list)
 down_h  = min(down_list)
-print(str(min(up_h))+','+str(down_h))
-
+print(str(up_h)+','+str(down_h))
 
 
 #5950,2657
