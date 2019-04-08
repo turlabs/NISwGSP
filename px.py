@@ -31,7 +31,8 @@ print(str(up_h)+','+str(down_h))
 
 #5950,2657
 print(im.size)
-cropped = im.crop((0, (height-up_h), width, (height-down_h)))  # (left, upper, right, lower)
+#  (x0,y0)   , (x1,y1) 坐标
+cropped = im.crop((0, (height-up_h)/2, width, height-down_h))  # (left, upper, right, lower)
 cropped.save("./pil_cut_thor.jpg")
 
 #print(up_list)
