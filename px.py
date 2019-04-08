@@ -25,10 +25,9 @@ for h in range(0, height):
     # for i in range(0,3):  
     #   count = (count+1)%16 
 
-up_h  = max(up_list)
-down_h  = min(down_list)
+up_h  = min(up_list)
+down_h  = max(down_list)
 print(str(up_h)+','+str(down_h))
-
 
 #5950,2657
 print(im.size)
